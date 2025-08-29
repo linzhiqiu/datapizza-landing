@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'/><meta name='viewport' content='width=device-width, initial-scale=1'/>
+<title>DataPizza — Cinematic Frames & Tags</title>
+<link rel='preconnect' href='https://fonts.googleapis.com'>
+<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+<link href='https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap' rel='stylesheet'>
+<script src='https://cdn.tailwindcss.com'></script>
+<style>
+:root{--bg1:#0f1116;--bg2:#0b0c10}body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(to bottom,var(--bg1),var(--bg2));color:#e5e7eb}
+.glass{background:rgba(0,0,0,.45);backdrop-filter:saturate(140%) blur(6px)}.card-grad{background:linear-gradient(180deg,#171821,#121318)}
+.radial-accent{background:radial-gradient(50% 40% at 80% -10%, rgba(239,68,68,.18), transparent 60%), radial-gradient(50% 40% at 20% 120%, rgba(250,204,21,.12), transparent 60%)}
+.chip{border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05)}
+</style>
+</head>
+<body class='min-h-screen'>
+<header class='sticky top-0 z-50 glass border-b border-white/10'><div class='max-w-6xl mx-auto px-4 py-3 flex items-center justify-between'>
+<a class='flex items-center gap-2 font-bold tracking-tight' href='#'><div class='w-7 h-7 rounded-full bg-gradient-to-br from-red-500 to-red-700 grid place-items-center ring-1 ring-white/20'><span class='text-xs'>🍕</span></div><span>DataPizza</span></a>
+<nav class='hidden sm:flex items-center gap-5 text-sm text-zinc-300'><a href='#tags' class='hover:text-white'>Tags</a><a href='#gallery' class='hover:text-white'>Gallery</a><a href='#about' class='hover:text-white'>About</a><a href='https://forms.gle/26LB1rouSZsR29Cx9' target='_blank' rel='noreferrer' class='inline-flex items-center gap-2 rounded-full bg-red-600 hover:bg-red-500 text-white h-9 px-4'>Request Access</a></nav>
+</div></header>
+<section class='px-4 pt-16 pb-8'><div class='max-w-4xl mx-auto text-center'>
+<h1 class='text-4xl md:text-5xl font-extrabold tracking-tight'>Shotdeck‑style search — but for video.</h1>
+<p class='mt-3 text-zinc-400'>Explore <span class='text-zinc-200'>camera motion</span>, <span class='text-zinc-200'>lighting</span>, and <span class='text-zinc-200'>color</span> across real clips.</p>
+<div class='mt-6 flex items-center gap-2 max-w-2xl mx-auto'><div class='relative flex-1'><input id='q' class='pl-4 h-11 w-full rounded-xl bg-white/5 border border-white/10 text-zinc-100 placeholder:text-zinc-500 outline-none' placeholder='e.g., dolly-in, hard light, teal & orange…'/></div><button id='searchBtn' class='h-11 rounded-xl bg-red-600 hover:bg-red-500 px-4 font-semibold'>Search</button></div>
+<div id='chips' class='mt-4 flex flex-wrap gap-2 justify-center'></div>
+</div></section>
+<section id='tags' class='px-4 pb-2'><div class='max-w-6xl mx-auto'><h2 class='text-2xl font-bold mb-2'>Explore tags</h2><p class='text-zinc-400 mb-4'>Browse by motion, lighting, and tone.</p><div id='tagGrid' class='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3'></div></div></section>
+<section id='gallery' class='px-4 py-8'><div class='max-w-6xl mx-auto flex items-center justify-between gap-3 flex-wrap'><h2 class='text-2xl font-bold'>Frameset</h2>
+<div class='flex items-center gap-2'><select id='motion' class='h-10 rounded-lg bg-white/5 border border-white/10 px-3'><option value=''>Motion: Any</option><option value='dolly-in'>Dolly‑In</option><option value='truck-left'>Truck‑Left</option><option value='handheld'>Handheld</option></select>
+<select id='light' class='h-10 rounded-lg bg-white/5 border border-white/10 px-3'><option value=''>Lighting: Any</option><option value='hard-light'>Hard Light</option><option value='soft-light'>Soft Light</option><option value='silhouette'>Silhouette</option></select>
+<select id='tone' class='h-10 rounded-lg bg-white/5 border border-white/10 px-3'><option value=''>Tone: Any</option><option value='blue-tone'>Blue Tone</option><option value='warm-tone'>Warm Tone</option></select></div></div>
+<div id='cards' class='max-w-6xl mx-auto mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3'></div></section>
+<section id='about' class='px-4 pb-10'><div class='max-w-4xl mx-auto rounded-2xl border border-white/10 card-grad p-6 radial-accent'><h2 class='text-2xl font-bold'>Built by DataPizza</h2><p class='text-zinc-300 mt-2'>Expert‑labeled video‑language datasets and tools for cinematic understanding: camera motion, lighting, color, framing, and visual storytelling.</p><ul class='mt-3 grid grid-cols-1 sm:grid-cols-2 gap-2 text-zinc-300'><li>300+ dynamic tags</li><li>Frame‑accurate metadata</li><li>Research‑grade evaluation</li><li>Production‑ready APIs</li></ul></div></section>
+<section id='contact' class='px-4 pb-16 text-center'><h2 class='text-2xl font-bold'>Want access?</h2><p class='text-zinc-400 mt-1'>Tell us about your project — we’ll get you set up with a pilot.</p><a href='https://forms.gle/26LB1rouSZsR29Cx9' target='_blank' rel='noreferrer' class='inline-flex items-center gap-2 mt-3 rounded-xl bg-red-600 hover:bg-red-500 text-white px-4 py-2'>Request Access</a></section>
+<footer class='border-t border-white/10 py-6 text-sm text-zinc-400'><div class='max-w-6xl mx-auto px-4 flex items-center justify-between'><div class='flex items-center gap-2'><div class='w-6 h-6 rounded-full bg-gradient-to-br from-red-500 to-red-700 grid place-items-center ring-1 ring-white/20'><span class='text-[10px]'>🍕</span></div><span>© <span id='year'></span> DataPizza Inc.</span></div><div class='flex items-center gap-4'><a href='#about' class='hover:text-white'>About</a><a href='#tags' class='hover:text-white'>Tags</a><a href='#gallery' class='hover:text-white'>Gallery</a></div></div></footer>
+<script>
+const VIDEOS=[
+{id:1,title:"Big Buck Bunny",director:"Blender Foundation",year:2008,src:"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",poster:"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg",tags:["dolly-in","soft-light","warm-tone"]},
+{id:2,title:"Sintel (Trailer)",director:"Blender Foundation",year:2010,src:"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",poster:"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/Sintel.jpg",tags:["handheld","hard-light","blue-tone"]},
+{id:3,title:"Tears of Steel (Clip)",director:"Blender Institute",year:2012,src:"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",poster:"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/TearsOfSteel.jpg",tags:["truck-left","silhouette","blue-tone"]},
+{id:4,title:"For Bigger Joyrides",director:"Google",year:2014,src:"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",poster:"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerJoyrides.jpg",tags:["dolly-in","hard-light","warm-tone"]},
+{id:5,title:"For Bigger Fun",director:"Google",year:2014,src:"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForFun.mp4",poster:"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForFun.jpg",tags:["handheld","soft-light","warm-tone"]},
+{id:6,title:"Elephant's Dream (Clip)",director:"Blender Foundation",year:2006,src:"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",poster:"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ElephantsDream.jpg",tags:["truck-left","silhouette","blue-tone"]},
+];
+const TAGS=["dolly-in","handheld","hard-light","soft-light","silhouette","blue-tone","warm-tone","truck-left"];
+const $=s=>document.querySelector(s);const chips=$("#chips"),tagGrid=$("#tagGrid"),cards=$("#cards");
+TAGS.forEach(t=>{const c=document.createElement("button");c.className="chip px-3 py-1.5 rounded-full text-sm hover:border-red-500 transition";c.textContent=t;c.addEventListener("click",()=>{$("#q").value=t;render(true)});chips.appendChild(c)});
+TAGS.forEach((t,i)=>{const d=document.createElement("div");d.className="relative rounded-2xl p-4 border border-white/10 overflow-hidden cursor-pointer group card-grad radial-accent";d.innerHTML="<div class='relative font-semibold'>"+t+"</div>";d.addEventListener("click",()=>{$("#q").value=t;render(true)});tagGrid.appendChild(d)});
+function match(card,q){if(!q)return true;q=q.toLowerCase();return card.title.toLowerCase().includes(q)||card.director.toLowerCase().includes(q)||card.tags.some(t=>t.includes(q))}
+function filterTags(card){const m=$("#motion").value,l=$("#light").value,t=$("#tone").value;const mOk=!m||card.tags.includes(m),lOk=!l||card.tags.includes(l),tOk=!t||card.tags.includes(t);return mOk&&lOk&&tOk}
+function render(reset=false){const q=$("#q").value.trim();const filtered=VIDEOS.filter(v=>match(v,q)&&filterTags(v));if(reset)cards.innerHTML="";cards.innerHTML=filtered.map(d=>`
+<article class="rounded-xl overflow-hidden border border-white/10 card-grad"><div class="relative">
+<video src="${d.src}" poster="${d.poster}" class="w-full aspect-video object-cover" muted loop playsinline onmouseenter="this.play()" onmouseleave="this.pause()" controls="false"></video>
+<div class="absolute left-2 right-2 bottom-2 glass px-2 py-1.5 rounded-lg text-sm flex items-center justify-between">
+<div><div class="font-semibold">${d.title}</div><div class="text-xs text-zinc-300">${d.director} — ${d.year}</div></div>
+<div class="hidden sm:flex gap-1">${d.tags.slice(0,3).map(t=>`<span class="text-[11px] rounded-full border border-white/15 px-2 py-0.5 text-zinc-200">${t}</span>`).join("")}</div></div>
+</div></article>`).join("");$("#year").textContent=new Date().getFullYear()}
+$("#searchBtn").addEventListener("click",()=>render(true));$("#q").addEventListener("keydown",e=>{if(e.key==="Enter")render(true)});
+["#motion","#light","#tone"].forEach(id=>$(id).addEventListener("change",()=>render(true)));render(true);
+</script>
+</body></html>
